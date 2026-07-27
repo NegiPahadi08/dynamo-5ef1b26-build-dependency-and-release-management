@@ -1,0 +1,24 @@
+{
+  "nodes": {
+    "node_1": [
+      {"index": 1, "term": 1, "command": {"op": "SET", "key": "cluster_name", "val": "prod-east"}, "replications": ["node_1", "node_2", "node_3", "node_4", "node_5"], "leader_commit_index": 1},
+      {"index": 2, "term": 1, "command": {"op": "SET", "key": "max_connections", "val": 100}, "replications": ["node_1", "node_2", "node_3", "node_4"], "leader_commit_index": 2},
+      {"index": 3, "term": 2, "command": {"op": "SET", "key": "auth_enabled", "val": true}, "replications": ["node_1", "node_2", "node_3"], "leader_commit_index": 3},
+      {"index": 4, "term": 2, "command": {"op": "SET", "key": "max_connections", "val": 250}, "replications": ["node_1", "node_2"], "leader_commit_index": 3},
+      {"index": 5, "term": 3, "command": {"op": "SET", "key": "timeout_ms", "val": 5000}, "replications": ["node_1", "node_2", "node_3", "node_4"], "leader_commit_index": 5}
+    ],
+    "node_2": [
+      {"index": 1, "term": 1, "command": {"op": "SET", "key": "cluster_name", "val": "prod-east"}, "replications": ["node_1", "node_2", "node_3", "node_4", "node_5"], "leader_commit_index": 1},
+      {"index": 2, "term": 1, "command": {"op": "SET", "key": "max_connections", "val": 100}, "replications": ["node_1", "node_2", "node_3", "node_4"], "leader_commit_index": 2},
+      {"index": 3, "term": 2, "command": {"op": "SET", "key": "auth_enabled", "val": true}, "replications": ["node_1", "node_2", "node_3"], "leader_commit_index": 3},
+      {"index": 4, "term": 2, "command": {"op": "SET", "key": "max_connections", "val": 250}, "replications": ["node_1", "node_2"], "leader_commit_index": 3},
+      {"index": 5, "term": 3, "command": {"op": "SET", "key": "timeout_ms", "val": 5000}, "replications": ["node_1", "node_2", "node_3", "node_4"], "leader_commit_index": 5}
+    ],
+    "node_3": [
+      {"index": 1, "term": 1, "command": {"op": "SET", "key": "cluster_name", "val": "prod-east"}, "replications": ["node_1", "node_2", "node_3", "node_4", "node_5"], "leader_commit_index": 1},
+      {"index": 2, "term": 1, "command": {"op": "SET", "key": "max_connections", "val": 100}, "replications": ["node_1", "node_2", "node_3", "node_4"], "leader_commit_index": 2},
+      {"index": 3, "term": 2, "command": {"op": "SET", "key": "auth_enabled", "val": true}, "replications": ["node_1", "node_2", "node_3"], "leader_commit_index": 3},
+      {"index": 5, "term": 3, "command": {"op": "SET", "key": "timeout_ms", "val": 5000}, "replications": ["node_1", "node_2", "node_3", "node_4"], "leader_commit_index": 5}
+    ]
+  }
+}
