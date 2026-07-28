@@ -1,8 +1,8 @@
 artifacts = []  # paths the verifier reads from the agent (e.g. ["/app/output.json"]) — must be above the first [section]
 
 [task]
-name = "dynamo/your-task-name"  # required format: org/name (Harbor needs the slash); name part lowercase kebab-case, <=3 words
-description = ""                 # one-line summary of the task
+name = "handshake-project/repair-container-build" # required format: org/name (Harbor needs the slash); name part lowercase kebab-case, <=3 words
+description = "Fix container release build pipeline signal handling and working directory execution issues."           # one-line summary of the task
 
 [metadata]
 # --- Pre-seeded for you when this repo was created — DO NOT EDIT ---
@@ -13,12 +13,12 @@ model_tested = "Opus-4.8"           # difficulty-benchmarking model (do not chan
 agent_tested = "Terminus-2"        # difficulty-benchmarking agent (do not change)
 # --- You fill these in ---
 # task_objective / artifact_type: pick from .dynamo/diversity-taxonomy.toml (lowercase snake_case).
-task_objective = []                # e.g. ["implement", "debug"]
-artifact_type = []                 # e.g. ["codebase", "configuration_file"]
-expert_time_estimate_hours = 0     # best-case hours for a focused domain expert with the intended insight
-difficulty_explanation = ""        # why this task is hard for agents and humans
-solution_explanation = ""          # high-level approach and key insights
-verification_explanation = ""      # how the tests verify correctness
+task_objective = ["BUG_FIX"]
+artifact_type = ["SCRIPT"]
+expert_time_estimate_hours = 1.0     # best-case hours for a focused domain expert with the intended insight
+difficulty_explanation = "Requires expertise in container build management, bash signal handling, and workspace directory validation."       # why this task is hard for agents and humans
+solution_explanation = "Modify solve.sh to validate working directory paths and catch SIGTERM signals using bash traps for clean process termination."         # high-level approach and key insights
+verification_explanation = "Executed via automated test runner to ensure solve.sh runs without errors and terminates cleanly on SIGTERM."      # how the tests verify correctness
 
 [verifier]
 timeout_sec = 120.0                # increase based on your test suite's runtime demands
@@ -26,7 +26,7 @@ timeout_sec = 120.0                # increase based on your test suite's runtime
 # Harbor overlays tests/ at verify time; leave environment_mode unset for this shared model.
 
 [agent]
-timeout_sec = 120.0                # raise for hard tasks — agents may run for many minutes or hours
+timeout_sec = 600                # raise for hard tasks — agents may run for many minutes or hours
 
 [environment]
 build_timeout_sec = 600.0          # max seconds for the Docker build
